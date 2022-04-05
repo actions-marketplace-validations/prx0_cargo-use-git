@@ -1,0 +1,12 @@
+name: 'cargo-use-git'
+description: 'Setup cargo to use git executable'
+runs:
+  using: "composite"
+  steps:
+    - name: Setup cargo to use git executable
+      shell: bash
+      run: |
+        cat >> ~/.cargo/config << EOF
+        [net]
+        git-fetch-with-cli = true
+        EOF
